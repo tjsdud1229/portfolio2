@@ -35,7 +35,6 @@ navbarToggleBtn.addEventListener('click', ()=> {
 
 
 
-
 //handle click on "contact me" on home
 
 const homeContactBtn = document.querySelector('.home__contact');

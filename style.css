@@ -107,6 +107,7 @@ p {
 #navbar.navbar--dark {
   background-color: var(--color-pink);
   padding: 8px;
+  height: 60px;
 }
 
 .navbar__logo {
@@ -175,6 +176,10 @@ p {
   border-radius: var(--size-border-radius);
   color: var(--color-white);
 }    
+
+.home__contact:hover {
+  background-color: var(--color-orange);
+}
     
 
 /* Section common */
@@ -193,7 +198,7 @@ p {
 .about__majors {
   display: flex;
   justify-content: space-between;
-  margin: 80px;
+  margin: 80px 0;
 }
 
 .major__icon {
@@ -319,6 +324,7 @@ p {
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
+  position: relative;
 }
 
 .category__btn.active,
@@ -341,9 +347,9 @@ p {
   height: 24px;
   display: inline-block;
   line-height: 24px;
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 4px;
+  right: 16px;
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
 }
@@ -454,8 +460,21 @@ p {
 
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
+  
+  :root{
+  /* font */
+    --font-large: 48px;
+    --font-medium: 28px;
+    --font-regular: 18px;
+    --font-small: 16px;
+    --font-micro: 14px;
+  }
+
   .navbar__toggle-btn {
     display: block;
+    top: 16px;
+    right: 16px;
+    font-size: var(--font-medium);
   }
 
   #navbar {
@@ -477,16 +496,67 @@ p {
     display: block;
   }
 
-  .about__majors {
-    flex-direction: column;
+  .section {
+    padding: 16px;
+    padding-top: 40px;
+  }
+
+  .major {
+    margin-bottom: 15px;
+  }
+  .major__icon {
+    margin: auto;
+  }
+
+  .major__title {
+    margin: 0;
   }
   .about__majors {
+    flex-direction: column;
+    margin-top: 30px;
     margin-bottom: 38px;
   }
 
   .skillset {
     flex-direction: column;
   }
+  
+  .major__description {
+    padding: 10px;
+  }
 
+  .category__btn {
+    margin: 4px 0;
+    width: 100%;
+  
+  }
+
+  .testimonial {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial__avatar {
+    width: 80px;
+    height: 90px;
+  }
+  
+  .testimonial__avatar:nth-child(even),
+  .testimonial__avatar:nth-child(odd){
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  .testimonial__speech-bubble {
+    order: 1;
+  }
+
+  .arrow-up {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    bottom: 36px;
+    right: 16px;
+  }
 
 }
