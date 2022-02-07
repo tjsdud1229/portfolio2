@@ -66,7 +66,6 @@ arrowup.addEventListener('click',()=>{
   scrollIntoView('#home');
 } )
 
-
 //Projects
 const workBtnContainer = document.querySelector('.work__categories');
 const projectContainer = document.querySelector('.work__project');
@@ -76,6 +75,14 @@ workBtnContainer.addEventListener('click', (e)=>{
   if(filter == null) {
     return;
   }
+
+  // Remove selection from the previous item and select the new one
+const active = document.querySelector('.category__btn.selected');
+active.classList.remove('selected');
+const target= e.target.nodeName === 'button' ? e.target : e.target.parentNode; 
+target.classList.add('selected');
+
+
   projectContainer.classList.add('anim-out');
   setTimeout(()=>{
     projects.forEach((project) => {
