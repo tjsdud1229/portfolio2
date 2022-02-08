@@ -17,7 +17,7 @@ navbarMenu.addEventListener('click', (event)=>{
   const target = event.target;
   const link = target.dataset.link;
   if(link == null) {
-    return
+    return;
   }
   navbarMenu.classList.remove('open');
   scrollIntoView(link);
@@ -49,6 +49,7 @@ const homeHeight = home.getBoundingClientRect().height;
 document.addEventListener('scroll', () =>{
     home.style.opacity = 1 -window.scrollY / homeHeight;
 });
+
 
 //Show "arrow up" button when scrolling down
 const arrowup = document.querySelector('.arrow-up');
@@ -97,8 +98,6 @@ target.classList.add('selected');
 
   }, 300);
 });
-
-
 
 
 
