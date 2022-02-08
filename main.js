@@ -72,7 +72,7 @@ const workBtnContainer = document.querySelector('.work__categories');
 const projectContainer = document.querySelector('.work__project');
 const projects = document.querySelectorAll('.project');
 workBtnContainer.addEventListener('click', (e)=>{
-  const filter = e.target.dataset.filter || e.target.parentNode.filter;
+  const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
   if(filter == null) {
     return;
   }
